@@ -25,6 +25,8 @@ extension MediaQueryExt on BuildContext {
   bool get isSmallTablet => (mediaQueryShortestSide >= 600);
   bool get isLargeTablet => (mediaQueryShortestSide >= 720);
   bool get isTablet => isSmallTablet || isLargeTablet;
+  double percentWidth(double percent) => width * percent;
+  double percentHeight(double percent) => height * percent;
 }
 
 extension NavigatorExt on BuildContext {
