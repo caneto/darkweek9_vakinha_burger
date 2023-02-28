@@ -15,7 +15,10 @@ class HomeRouter {
                 dio: context.read(), log: context.read()),
           ),
           Provider(
-            create: (context) => HomeController(context.read()),
+            create: (context) => HomeController(
+              log: context.read(),
+              productsRepository: context.read(),
+            ),
           )
         ],
         child: const HomePage(),
