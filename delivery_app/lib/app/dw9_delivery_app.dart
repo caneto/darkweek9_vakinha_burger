@@ -13,6 +13,7 @@ class Dw9DeliveryApp extends StatelessWidget {
    Widget build(BuildContext context) {
        return ApplicationBinding(
          child: MaterialApp(
+          debugShowCheckedModeBanner: false,
           title: 'Delivery App',
           theme: ThemeConfig.theme,
           routes: {
