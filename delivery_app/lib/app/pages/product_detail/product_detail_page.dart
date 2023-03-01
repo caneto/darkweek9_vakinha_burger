@@ -4,6 +4,7 @@ import 'package:delivery_app/app/core/ui/helpers/context_extension.dart';
 import 'package:delivery_app/app/core/ui/styles/text_styles.dart';
 import 'package:delivery_app/app/core/ui/widgets/delivery_appbar.dart';
 import 'package:delivery_app/app/core/ui/widgets/delivery_increment_decrement_button.dart';
+import 'package:delivery_app/app/dto/order_product_dto.dart';
 import 'package:delivery_app/app/models/product_model.dart';
 import 'package:delivery_app/app/pages/product_detail/product_detail_controller.dart';
 import 'package:flutter/material.dart';
@@ -90,9 +91,16 @@ class _ProductDetailPageState
                 height: 68,
                 padding: const EdgeInsets.all(8),
                 child: BlocBuilder<ProductDetailController, int>(
-                  builder: (context, amaut) {
+                  builder: (context, amaunt) {
                     return ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.pop(
+                          OrderProductDto(
+                            product: widget.product,
+                            amount: amaunt,
+                          ),
+                        );
+                      },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -104,7 +112,7 @@ class _ProductDetailPageState
                           const SizedBox(width: 10),
                           Expanded(
                             child: AutoSizeText(
-                              (widget.product.price * amaut).currencyPTBR,
+                              (widget.product.price * amaunt).currencyPTBR,
                               maxFontSize: 13,
                               minFontSize: 5,
                               maxLines: 1,

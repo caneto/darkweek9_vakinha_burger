@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:delivery_app/app/dto/order_product_dto.dart';
 import 'package:delivery_app/app/repository/products/products_repository.dart';
 
 import '../../core/logger/app_logger.dart';
@@ -24,5 +25,11 @@ class HomeController extends Cubit<HomeState> {
       _log.error('Erro ao buscar produtos', e, s);
       emit(state.copyWith(status: HomeStateStatus.error, errorMessage: 'Erro ao buscar produtos'));
     }
+  }
+
+  void addOrUpdateBag(OrderProductDto orderProduct) {
+    final shoppingBag = [...state.shoppingBag];
+    shoppingBag.add(orderProduct);
+    emit(state.copyWith(shoppingBag: shoppingBag));
   }
 }
