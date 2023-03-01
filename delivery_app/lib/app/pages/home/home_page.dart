@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:delivery_app/app/core/ui/helpers/loader.dart';
-import 'package:delivery_app/app/core/ui/helpers/messages.dart';
 import 'package:delivery_app/app/core/ui/widgets/delivery_appbar.dart';
 import 'package:delivery_app/app/pages/home/home_controller.dart';
 import 'package:delivery_app/app/pages/home/home_state.dart';
@@ -17,8 +15,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends BaseState<HomePage, HomeController>  {
-
+class _HomePageState extends BaseState<HomePage, HomeController> {
   @override
   void onReady() {
     controller.loadProducts();
@@ -31,13 +28,12 @@ class _HomePageState extends BaseState<HomePage, HomeController>  {
       body: BlocConsumer<HomeController, HomeState>(
         listener: (context, state) {
           state.status.matchAny(
-            any: () => hideLoader(),
-            loading: () => showLoader(),
-            error: () {
-              hideLoader();
-              showError(state.errorMessage ?? 'Erro não informado');
-            }
-          );
+              any: () => hideLoader(),
+              loading: () => showLoader(),
+              error: () {
+                hideLoader();
+                showError(state.errorMessage ?? 'Erro não informado');
+              });
         },
         buildWhen: (previous, current) => current.status.matchAny(
           any: () => false,
@@ -53,11 +49,18 @@ class _HomePageState extends BaseState<HomePage, HomeController>  {
                   itemCount: state.products.length,
                   itemBuilder: (context, index) {
                     final product = state.products[index];
+                    final orders = state.shoppingBag
+                        .where((order) => order.product == product);
                     return DeliveryProductTile(
                       product: product,
+                      orderProduct: orders.isNotEmpty ? orders.first : null,
                     );
                   },
                 ),
+              ),
+              Visibility(
+                visible: state.shoppingBag.isNotEmpty,
+                child: const Text('Shopping BAG'),
               )
             ],
           );

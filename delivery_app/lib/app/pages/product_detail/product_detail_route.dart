@@ -17,6 +17,7 @@ class ProductDetailRoute {
               as Map<String, dynamic>;
           return ProductDetailPage(
             product: args['product'],
+            order: args['order'],
           );
         },
       );
