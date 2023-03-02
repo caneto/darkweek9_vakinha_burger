@@ -39,6 +39,10 @@ class TextStyles {
    TextStyle get textTextButtonLabel => textBold.copyWith(
     fontSize: 15
    );
+
+   TextStyle get textTitle => textBold.copyWith(
+    fontSize: 28
+   );
 }
 
 extension TextStylesExtension on BuildContext {
