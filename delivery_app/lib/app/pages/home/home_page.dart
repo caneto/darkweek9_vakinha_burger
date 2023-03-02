@@ -1,3 +1,4 @@
+import 'package:delivery_app/app/pages/home/widgets/shopping_bag_wiget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -60,7 +61,7 @@ class _HomePageState extends BaseState<HomePage, HomeController> {
               ),
               Visibility(
                 visible: state.shoppingBag.isNotEmpty,
-                child: const Text('Shopping BAG'),
+                child: ShoppingBagWiget(bag: state.shoppingBag),
               )
             ],
           );
