@@ -1,5 +1,6 @@
-import 'package:delivery_app/app/core/ui/styles/text_styles.dart';
+//import 'package:delivery_app/app/core/ui/styles/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class OrderField extends StatelessWidget {
   final String title;
@@ -7,7 +8,8 @@ class OrderField extends StatelessWidget {
   final FormFieldValidator validator;
   final TextInputType keyboardType;
   final String hintText;
-
+  final List<TextInputFormatter>? inputFormatters;  
+  
   const OrderField({
     super.key,
     required this.title,
@@ -15,6 +17,7 @@ class OrderField extends StatelessWidget {
     required this.validator,
     required this.hintText,
     required this.keyboardType,
+    this.inputFormatters,
   });
 
   @override
@@ -61,6 +64,7 @@ class OrderField extends StatelessWidget {
                 borderSide: const BorderSide(color: Colors.grey),
               ),
             ),
+            inputFormatters: inputFormatters,
           )
         ],
       ),

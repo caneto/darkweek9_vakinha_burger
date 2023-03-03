@@ -49,6 +49,8 @@ dependencies:
   auto_size_text: ^3.0.0
   shared_preferences: ^2.0.18
   validatorless: ^1.2.3
+  validadores: ^1.0.5
+  brasil_fields: ^1.10.0
   flutter_awesome_select: ^6.5.0
   
 

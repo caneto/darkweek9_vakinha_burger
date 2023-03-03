@@ -1,6 +1,6 @@
 import 'package:delivery_app/app/core/provider/application_binding.dart';
 import 'package:delivery_app/app/core/ui/theme/theme_config.dart';
-import 'package:delivery_app/app/pages/home/order/order_page.dart';
+import 'package:delivery_app/app/pages/order/order_page.dart';
 import 'package:delivery_app/app/pages/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 

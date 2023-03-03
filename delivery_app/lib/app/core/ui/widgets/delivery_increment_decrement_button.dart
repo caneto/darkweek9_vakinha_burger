@@ -26,7 +26,7 @@ class DeliveryIncrementDecrementButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: _compact ? const EdgeInsets.all(5):null,
+      padding: _compact ? const EdgeInsets.all(5) : null,
       decoration: BoxDecoration(
           border: Border.all(color: Colors.grey),
           borderRadius: BorderRadius.circular(7)),
