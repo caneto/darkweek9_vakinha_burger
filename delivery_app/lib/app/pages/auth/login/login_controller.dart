@@ -28,10 +28,12 @@ class LoginController extends Cubit<LoginState> {
       sp.setString('accessToken', authModel.accessToken);
       sp.setString('refreshToken', authModel.accessToken);
       emit(state.copyWith(status: LoginStatus.success));
-    } on UnauthorizedExceptions catch (e) {
+    } on UnauthorizedExceptions catch (e,s) {
+      _log.error('Login ou senha inválidos', e, s);
       emit(state.copyWith(status: LoginStatus.loginError, errorMessage: 'Login ou senha inválidos'));
     } catch(e,s) {
-
+      _log.error('Erro ao realizar login', e, s);
+      emit(state.copyWith(status: LoginStatus.error, errorMessage: 'Erro ao realizar login'));
     }
   }
 }
