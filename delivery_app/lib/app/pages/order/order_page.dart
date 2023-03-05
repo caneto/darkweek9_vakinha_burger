@@ -4,27 +4,39 @@ import 'package:delivery_app/app/core/ui/widgets/delivery_appbar.dart';
 import 'package:delivery_app/app/core/ui/widgets/delivery_button.dart';
 import 'package:delivery_app/app/dto/order_product_dto.dart';
 import 'package:delivery_app/app/models/product_model.dart';
+import 'package:delivery_app/app/pages/order/order_controller.dart';
 import 'package:delivery_app/app/pages/order/widget/order_field.dart';
 import 'package:delivery_app/app/pages/order/widget/payment_types_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:validadores/Validador.dart';
 import 'package:validatorless/validatorless.dart';
 
+import '../../core/ui/base_state/base_state.dart';
+import 'order_state.dart';
 import 'widget/order_product_tile.dart';
 
 class OrderPage extends StatefulWidget {
-  const OrderPage({Key? key}) : super(key: key);
+  const OrderPage({super.key});
 
   @override
   State<OrderPage> createState() => _OrderPageState();
 }
 
-class _OrderPageState extends State<OrderPage> {
+class _OrderPageState extends BaseState<OrderPage, OrderController> {
   final _formKey = GlobalKey<FormState>();
 
   final _enderecoEC = TextEditingController();
   final _cpfEC = TextEditingController();
+
+  @override
+  void onReady() {
+    final products =
+        ModalRoute.of(context)!.settings.arguments as List<OrderProductDto>;
+    controller.load(products);
+    super.onReady();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +48,8 @@ class _OrderPageState extends State<OrderPage> {
           slivers: [
             SliverToBoxAdapter(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                 child: Row(
                   children: [
                     Text(
@@ -51,25 +64,29 @@ class _OrderPageState extends State<OrderPage> {
                 ),
               ),
             ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                childCount: 2,
-                (context, index) {
-                  return Column(
-                    children: [
-                      OrderProductTile(
-                          index: index,
-                          orderProduct: OrderProductDto(
-                            product: ProductModel.fromMap({}),
-                            amount: 10,
-                          )),
-                      const Divider(
-                        color: Colors.grey,
-                      )
-                    ],
-                  );
-                },
-              ),
+            BlocSelector<OrderController, OrderState, List<OrderProductDto>>(
+              selector: (state) => state.orderProduct,
+              builder: (context, orderProducts) {
+                return SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    childCount: orderProducts.length,
+                    (context, index) {
+                      final orderProduct = orderProducts[index];
+                      return Column(
+                        children: [
+                          OrderProductTile(
+                            index: index,
+                            orderProduct: orderProduct,
+                          ),
+                          const Divider(
+                            color: Colors.grey,
+                          )
+                        ],
+                      );
+                    },
+                  ),
+                );
+              },
             ),
             SliverToBoxAdapter(
               child: Column(
@@ -101,7 +118,7 @@ class _OrderPageState extends State<OrderPage> {
                   OrderField(
                     title: 'Endereço de Entrega',
                     controller: _enderecoEC,
-                    validator:  Validatorless.required('Endereço obrigatório'),
+                    validator: Validatorless.required('Endereço obrigatório'),
                     hintText: 'Digite um endereço',
                     keyboardType: TextInputType.streetAddress,
                   ),
