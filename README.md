@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="assets\images\logo.png" width="100" alt="Logo App Vakinha Burger"/>
+    <img src="https://github.com/caneto/darkweek9_vakinha_burger/blob/main/delivery_app/assets/images/logo.png" width="100" alt="Logo App Vakinha Burger"/>
 </p>
 
 <h1 align="center">Vakinha Burger</h1>
