@@ -59,7 +59,7 @@
 - Providers
 - Mixins
 - Singleton
-- Teste de BLoC
+- Teste de BLoC (A Fazer)
 - Telas: 
   - Splash (tela inicial do app para transição)
   - Home (tela principal do app, lista todos os produtos disponíveis e que serve de fluxo inicial para as demais telas descritas abaixo)
@@ -75,8 +75,7 @@
 
    <p>
    Como esse foi um "remake" de um Dart Week que já ocorreu (Vakinha Burger 6ª Edição com GetX), obtive um maior aproveitamento de código. Posso dizer com clareza que aprendi muito com o uso de um package para pattern matching, o <a href="https://pub.dev/packages/match">match</a>. O BLoC combinado com esse package e o ensinamento do Rodrigo Rahman, fica extremamente mais simples e divertido de enteder e desenvolver.<br>
-   Aprendi também como começar os testes com bloc, algo que eu há tempos marquei para estudar, e finalmente consegui a introdução dos mesmos nesse DW, me desafiando (inclusivei irei incrementá-los).<br>
-   Por mais que estes demoraram um tempo até eu entender o que de fato estava ocorrendo e o porquê não estavam passando à priori, foi extremamente satisfatório poder ler "2/2 tests passed(100%)".<br>
+ 
    Espero estar sempre aprendendo novas tecnologias com o Rahman e a comunidade incrivel de Flutter!
    </p>
 
@@ -138,21 +137,24 @@
 
 ---
 
+
 <h2>📝 Licença</h2>
 
 <p>
-   Esse repositório está sobre a Licença MIT, e você pode vê-la no arquivo <a href="https://github.com/GabrielCR99/dw9_vakinha_burger_bloc/blob/master/LICENSE">LICENSE</a> para mais detalhes. 😉
+   Esse repositório está sobre a Licença GNU General Public License v3.0, e você pode vê-la no arquivo <a href="https://github.com/caneto/darkweek9_vakinha_burger/blob/main/LICENSE">LICENSE</a> para mais detalhes. 😉
 </p>
+
 
 ---
 
-   >Esse projeto foi desenvolvido com ❤️ por **[@Gabriel Roveri](https://www.linkedin.com/in/gabriel-roveri/)**, com o instrutor **[@Rodrigo Rahman](https://br.linkedin.com/in/rodrigo-rahman)**, no evento #DartWeek da **[Academia do Flutter](https://instituto.academiadoflutter.com.br)**.<br>
+   >Esse projeto foi desenvolvido com ❤️ por **[@Carlos Alberto Pinto](https://www.linkedin.com/in/canetorj/)**, com o instrutor **[@Rodrigo Rahman](https://br.linkedin.com/in/rodrigo-rahman)**, no evento #DartWeek da **[Academia do Flutter]**.<br>
    Se isso te ajudou, dê uma ⭐, e contribua, isso irá me ajudar também 😉
 
 ---
 
    <div align="center">
 
-   [![Linkedin Badge](https://img.shields.io/badge/-Gabriel%20Roveri-292929?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/gabriel-roveri/)](https://www.linkedin.com/in/gabriel-roveri/)
+   [![Linkedin Badge](https://img.shields.io/badge/-Carlos%20Alberto-292929?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/canetorj/)](https://www.linkedin.com/in/canetorj/)
 
    </div>
+
