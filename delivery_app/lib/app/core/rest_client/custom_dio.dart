@@ -8,7 +8,7 @@ import '../helpers/enviroment/enviroments.dart';
 
 class CustomDio extends DioForNative {
 
-  late AuthInterceptor _authInterceptor;
+  late final _authInterceptor = AuthInterceptor(dio: this);
 
   CustomDio()
       : super(BaseOptions(
@@ -24,7 +24,6 @@ class CustomDio extends DioForNative {
       if (kDebugMode) LogInterceptor(requestBody: true, responseBody: true, requestHeader: true),
     ]);
 
-    _authInterceptor = AuthInterceptor();
   }
 
   CustomDio auth() {
