@@ -31,13 +31,6 @@
     <br>
 </p>
 
----
-
-<h2>📱 Preview</h2>
-
-   <p align="center">
-      <img src=".github/Vakinha-Burger-Demo.gif" width="400" alt="Vakinha Burger Demonstração">
-   </p>
 
 ---
 
