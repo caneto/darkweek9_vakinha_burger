@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:delivery_app/app/core/ui/widgets/delivery_appbar.dart';
-import 'package:delivery_app/app/pages/home/home_controller.dart';
-import 'package:delivery_app/app/pages/home/home_state.dart';
 import 'package:delivery_app/app/pages/home/widgets/delivery_product_tile.dart';
 
 import '../../core/ui/base_state/base_state.dart';
+import 'controller/home_controller.dart';
+import 'controller/home_state.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -44,7 +44,6 @@ class _HomePageState extends BaseState<HomePage, HomeController> {
         builder: (context, state) {
           return Column(
             children: [
-              Text(state.shoppingBag.length.toString()),
               Expanded(
                 child: ListView.builder(
                   itemCount: state.products.length,

@@ -2,14 +2,14 @@ import 'package:delivery_app/app/core/ui/helpers/context_extension.dart';
 import 'package:delivery_app/app/core/ui/styles/text_styles.dart';
 import 'package:delivery_app/app/core/ui/widgets/delivery_appbar.dart';
 import 'package:delivery_app/app/core/ui/widgets/delivery_textform_field.dart';
-import 'package:delivery_app/app/pages/auth/register/register_controller.dart';
-import 'package:delivery_app/app/pages/auth/register/register_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:validatorless/validatorless.dart';
 
 import '../../../core/ui/base_state/base_state.dart';
 import '../../../core/ui/widgets/delivery_button.dart';
+import 'controller/register_controller.dart';
+import 'controller/register_state.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);

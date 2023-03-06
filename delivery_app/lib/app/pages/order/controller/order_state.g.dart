@@ -11,6 +11,10 @@ extension OrderStatusMatch on OrderStatus {
       {required T Function() initial,
       required T Function() loading,
       required T Function() loaded,
+      required T Function() updateOrder,
+      required T Function() confirmDeleteProduct,
+      required T Function() emptyBag,
+      required T Function() success,
       required T Function() error}) {
     final v = this;
     if (v == OrderStatus.initial) {
@@ -25,6 +29,22 @@ extension OrderStatusMatch on OrderStatus {
       return loaded();
     }
 
+    if (v == OrderStatus.updateOrder) {
+      return updateOrder();
+    }
+
+    if (v == OrderStatus.confirmDeleteProduct) {
+      return confirmDeleteProduct();
+    }
+
+    if (v == OrderStatus.emptyBag) {
+      return emptyBag();
+    }
+
+    if (v == OrderStatus.success) {
+      return success();
+    }
+
     if (v == OrderStatus.error) {
       return error();
     }
@@ -37,6 +57,10 @@ extension OrderStatusMatch on OrderStatus {
       T Function()? initial,
       T Function()? loading,
       T Function()? loaded,
+      T Function()? updateOrder,
+      T Function()? confirmDeleteProduct,
+      T Function()? emptyBag,
+      T Function()? success,
       T Function()? error}) {
     final v = this;
     if (v == OrderStatus.initial && initial != null) {
@@ -49,6 +73,22 @@ extension OrderStatusMatch on OrderStatus {
 
     if (v == OrderStatus.loaded && loaded != null) {
       return loaded();
+    }
+
+    if (v == OrderStatus.updateOrder && updateOrder != null) {
+      return updateOrder();
+    }
+
+    if (v == OrderStatus.confirmDeleteProduct && confirmDeleteProduct != null) {
+      return confirmDeleteProduct();
+    }
+
+    if (v == OrderStatus.emptyBag && emptyBag != null) {
+      return emptyBag();
+    }
+
+    if (v == OrderStatus.success && success != null) {
+      return success();
     }
 
     if (v == OrderStatus.error && error != null) {

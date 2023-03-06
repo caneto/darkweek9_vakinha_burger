@@ -4,9 +4,10 @@ import 'package:delivery_app/app/core/ui/styles/colors_app.dart';
 import 'package:delivery_app/app/core/ui/styles/text_styles.dart';
 import 'package:delivery_app/app/dto/order_product_dto.dart';
 import 'package:delivery_app/app/models/product_model.dart';
-import 'package:delivery_app/app/pages/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../controller/home_controller.dart';
 
 class DeliveryProductTile extends StatelessWidget {
   final ProductModel product;

@@ -5,5 +5,5 @@ import 'app/dw9_delivery_app.dart';
 Future<void> main() async {
   await Environments.loadEnvs();
 
-  runApp( const Dw9DeliveryApp() );
+  runApp( Dw9DeliveryApp() );
 }

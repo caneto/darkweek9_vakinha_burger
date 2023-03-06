@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'login_controller.dart';
+import 'controller/login_controller.dart';
 import 'login_page.dart';
 
 class LoginRouter {

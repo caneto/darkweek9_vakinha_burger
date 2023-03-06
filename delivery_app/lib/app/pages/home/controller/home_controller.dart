@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
+import 'package:delivery_app/app/core/logger/app_logger.dart';
 import 'package:delivery_app/app/dto/order_product_dto.dart';
 import 'package:delivery_app/app/repository/products/products_repository.dart';
 
-import '../../core/logger/app_logger.dart';
 import 'home_state.dart';
 
 class HomeController extends Cubit<HomeState> {
@@ -45,5 +45,9 @@ class HomeController extends Cubit<HomeState> {
     }
 
     emit(state.copyWith(shoppingBag: shoppingBag));
+  }
+
+  void updateBag(List<OrderProductDto> updateBag) {
+    emit(state.copyWith(shoppingBag: updateBag));
   }
 }

@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
+import 'package:delivery_app/app/core/logger/app_logger.dart';
 import 'package:delivery_app/app/repository/auth/auth_repository.dart';
 
-import '../../../core/logger/app_logger.dart';
 import 'register_state.dart';
 
 class RegisterController extends Cubit<RegisterState> {

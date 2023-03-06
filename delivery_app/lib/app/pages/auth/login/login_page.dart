@@ -2,14 +2,14 @@ import 'package:delivery_app/app/core/ui/helpers/context_extension.dart';
 import 'package:delivery_app/app/core/ui/styles/text_styles.dart';
 import 'package:delivery_app/app/core/ui/widgets/delivery_appbar.dart';
 import 'package:delivery_app/app/core/ui/widgets/delivery_button.dart';
-import 'package:delivery_app/app/pages/auth/login/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:validatorless/validatorless.dart';
 
 import '../../../core/ui/base_state/base_state.dart';
 import '../../../core/ui/widgets/delivery_textform_field.dart';
-import 'login_state.dart';
+import 'controller/login_controller.dart';
+import 'controller/login_state.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
