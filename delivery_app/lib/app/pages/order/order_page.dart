@@ -4,7 +4,6 @@ import 'package:delivery_app/app/core/ui/helpers/context_extension.dart';
 import 'package:delivery_app/app/core/ui/styles/text_styles.dart';
 import 'package:delivery_app/app/core/ui/widgets/delivery_appbar.dart';
 import 'package:delivery_app/app/core/ui/widgets/delivery_button.dart';
-import 'package:delivery_app/app/dto/order_dto.dart';
 import 'package:delivery_app/app/dto/order_product_dto.dart';
 import 'package:delivery_app/app/models/payment_type_model.dart';
 import 'package:delivery_app/app/pages/order/widget/order_field.dart';
