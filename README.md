@@ -60,8 +60,7 @@
   - Register (onde possui o fluxo de cadastro)
   - ProductDetail (detalhe da página do produto, onde temos mais componentes descritivos a respeito do produto)
   - Order (onde podemos escolher a forma de pagamento e finalizar nosso pedido)
-
- -- Principais packages utilizados.
+ - Principais packages utilizados.
     - Bloc - 8.11
     - flutter_bloc - 8.1.2
     - provider - 6.0.5
