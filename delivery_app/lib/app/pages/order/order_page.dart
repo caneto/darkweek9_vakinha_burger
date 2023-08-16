@@ -84,31 +84,30 @@ class _OrderPageState extends BaseState<OrderPage, OrderController> {
     return BlocListener<OrderController, OrderState>(
       listener: (context, state) {
         state.status.matchAny(
-          any: () => hideLoader(),
-          loading: () => showLoader(),
-          error: () {
-            hideLoader();
-            showError(state.errorMessage ?? 'Erro não informado');
-          },
-          confirmDeleteProduct: () {
-            hideLoader();
-            if (state is OrderConfirmDeleteProductState) {
-              _showConfirmProductDialog(state);
-            }
-          },
-          emptyBag: () {
-            showInfo(
-                'Sua sacola está vazia, por favor selecione um produto para relaizar seu pedido');
-            context.pop(<OrderProductDto>[]);
-          },
-          success: () {
-            hideLoader();
-            Navigator.of(context).popAndPushNamed(
-            '/order/completed',
-            result: const <OrderProductDto>[],
-          );
-          }
-        );
+            any: () => hideLoader(),
+            loading: () => showLoader(),
+            error: () {
+              hideLoader();
+              showError(state.errorMessage ?? 'Erro não informado');
+            },
+            confirmDeleteProduct: () {
+              hideLoader();
+              if (state is OrderConfirmDeleteProductState) {
+                _showConfirmProductDialog(state);
+              }
+            },
+            emptyBag: () {
+              showInfo(
+                  'Sua sacola está vazia, por favor selecione um produto para relaizar seu pedido');
+              context.pop(<OrderProductDto>[]);
+            },
+            success: () {
+              hideLoader();
+              context.popAndPushNamed(
+                '/order/completed',
+                const <OrderProductDto>[],
+              );
+            });
       },
       child: WillPopScope(
         onWillPop: () async {
